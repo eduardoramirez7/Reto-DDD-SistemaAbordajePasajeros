@@ -10,6 +10,8 @@ public class HorasVuelo implements ValueObject<Integer> {
 
     public HorasVuelo(Integer value) {
         this.value = value;
+        if(this.value < 200)
+            throw new IllegalArgumentException("El piloto debe tener como minimo 200 horas de vuelo");
     }
 
     @Override

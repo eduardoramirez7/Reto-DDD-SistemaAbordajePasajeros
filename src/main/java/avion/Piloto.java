@@ -1,11 +1,7 @@
 package avion;
 
-import avion.values.HorasVuelo;
-import avion.values.NombrePiloto;
-import avion.values.PilotoId;
-import avion.values.TipoLicencia;
+import avion.values.*;
 import co.com.sofka.domain.generic.Entity;
-import co.com.sofka.domain.generic.Identity;
 
 import java.util.Objects;
 

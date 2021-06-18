@@ -15,15 +15,14 @@ public class CrearAvion implements Command {
     private final NombreAerolinea nombreAerolinea;
     private final ClaseAvion claseAvion;
     private final CodigoVuelo codigoVuelo;
-    private final Set<Piloto> pilotos;
 
 
-    public CrearAvion(AvionId avionId, NombreAerolinea nombreAerolinea, ClaseAvion claseAvion, CodigoVuelo codigoVuelo, Set<Piloto> pilotos) {
+
+    public CrearAvion(AvionId avionId, NombreAerolinea nombreAerolinea, ClaseAvion claseAvion, CodigoVuelo codigoVuelo) {
         this.avionId = avionId;
         this.nombreAerolinea = nombreAerolinea;
         this.claseAvion = claseAvion;
         this.codigoVuelo = codigoVuelo;
-        this.pilotos = pilotos;
     }
 
     public AvionId getAvionId() {
@@ -42,7 +41,5 @@ public class CrearAvion implements Command {
         return codigoVuelo;
     }
 
-    public Set<Piloto> getPilotos() {
-        return pilotos;
-    }
+
 }

@@ -1,8 +1,9 @@
 package avion.commands;
 
 import avion.values.*;
+import co.com.sofka.domain.generic.Command;
 
-public class AsignarAzafata {
+public class AsignarAzafata implements Command {
 
     private final AvionId avionId;
     private final AzafataId azafataId;

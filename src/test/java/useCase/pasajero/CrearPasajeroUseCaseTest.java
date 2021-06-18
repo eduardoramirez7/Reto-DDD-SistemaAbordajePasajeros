@@ -31,7 +31,7 @@ class CrearPasajeroUseCaseTest {
                 new Email("eduar1079@gmail.com"),
                 new NumeroCelular(12344)
         );
-        var valor = String.valueOf(5);
+
         //act
         var response = UseCaseHandler.getInstance().syncExecutor(
                 crearPasajeroUseCase, new RequestCommand<>(command)

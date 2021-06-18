@@ -1,9 +1,11 @@
 package pasajero;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 import pasajero.events.*;
 import pasajero.values.*;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -24,6 +26,12 @@ public class Pasajero extends AggregateEvent<PasajeroId> {
     private Pasajero(PasajeroId entityId){
         super(entityId);
         subscribe(new PasajeroChange(this));
+    }
+
+    public static Pasajero from (PasajeroId pasajeroId, List<DomainEvent> events){
+        var pasajero = new Pasajero(pasajeroId);
+        events.forEach(pasajero::applyEvent);
+        return pasajero;
     }
 
     public void actualizarAsientoTiquete(TiqueteId tiqueteId, Asiento asiento){

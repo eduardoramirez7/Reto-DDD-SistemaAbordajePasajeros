@@ -10,6 +10,9 @@ public class EdadAzafata implements ValueObject<Integer> {
 
     public EdadAzafata(Integer value) {
         this.value = value;
+        if(this.value < 18 || this.value > 60){
+            throw new IllegalArgumentException("La edad de la azafata debe estar entre 18 y 59 años");
+        }
     }
 
     @Override

@@ -170,6 +170,18 @@ public class Avion extends AggregateEvent<AvionId> {
         return pilotos;
     }
 
+    public int cantidadPilotos() {
+        return pilotos.size();
+    }
+
+    public int cantidadAzafatas() {
+        return azafatas.size();
+    }
+
+    public int cantidadAsientos() {
+        return asientos.size();
+    }
+
     public Set<Azafata> azafatas() {
         return azafatas;
     }
