@@ -1,8 +1,9 @@
 package chekin.commands;
 
 import chekin.values.*;
+import co.com.sofka.domain.generic.Command;
 
-public class AsignarInformacionVuelo {
+public class AsignarInformacionVuelo implements Command {
 
     private final CheckInId checkInId;
     private final InformacionVueloId informacionVueloId;

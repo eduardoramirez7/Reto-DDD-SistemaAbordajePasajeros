@@ -2,6 +2,7 @@ package useCase.checkin;
 
 import chekin.commands.AsignarRecepcionista;
 import chekin.events.CheckInCreado;
+import chekin.events.RecepcionistaAsignada;
 import chekin.values.CantidadPersonasPorFila;
 import chekin.values.CheckInId;
 import chekin.values.NombreRecepcionista;
@@ -10,6 +11,7 @@ import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.domain.generic.DomainEvent;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -49,13 +51,15 @@ class AsignarRecepcionistaUseCaseTest {
 
         //Act
         var response = UseCaseHandler.getInstance()
-                .setIdentifyExecutor("32950")
+                .setIdentifyExecutor("8585")
                 .syncExecutor(
                         asignarRecepcionistaUseCase, new RequestCommand<>(command)
                 ).orElseThrow();
         var events = response.getDomainEvents();
 
         //Assert
+        RecepcionistaAsignada recepcionistaAsignada = (RecepcionistaAsignada) events.get(0);
+        Assertions.assertEquals("8585",recepcionistaAsignada.getRecepcionistaId().value());
 
     }
     private List<DomainEvent> events(){
