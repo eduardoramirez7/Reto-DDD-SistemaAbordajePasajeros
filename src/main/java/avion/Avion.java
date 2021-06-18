@@ -57,6 +57,66 @@ public class Avion extends AggregateEvent<AvionId> {
         appendChange(new CodigoVueloActualizado(codigoVuelo)).apply();
     }
 
+    public void actualizarNombrePiloto(PilotoId pilotoId,NombrePiloto nombrePiloto){
+        Objects.requireNonNull(pilotoId);
+        Objects.requireNonNull(nombrePiloto);
+        appendChange(new NombrePilotoActualizado(pilotoId,nombrePiloto)).apply();
+    }
+
+    public void actualizarLicencia(PilotoId pilotoId, TipoLicencia tipoLicencia){
+        Objects.requireNonNull(pilotoId);
+        Objects.requireNonNull(tipoLicencia);
+        appendChange(new LicenciaActualizada(pilotoId,tipoLicencia)).apply();
+    }
+
+    public void actualizarHorasVuelo(PilotoId pilotoId, HorasVuelo horasVuelo){
+        Objects.requireNonNull(pilotoId);
+        Objects.requireNonNull(horasVuelo);
+        appendChange(new HorasVueloActualizada(pilotoId, horasVuelo)).apply();
+    }
+
+    public void actualizarNombreAzafata(AzafataId azafataId, NombreAzafata nombreAzafata){
+        Objects.requireNonNull(azafataId);
+        Objects.requireNonNull(nombreAzafata);
+        appendChange(new NombreAzafataActualizado(azafataId, nombreAzafata)).apply();
+    }
+
+    public void actualizarNumeroPasaporte(AzafataId azafataId, NumeroPasaporte numeroPasaporte){
+        Objects.requireNonNull(azafataId);
+        Objects.requireNonNull(numeroPasaporte);
+        appendChange(new NumeroPasaporteActualizado(azafataId, numeroPasaporte)).apply();
+    }
+
+    public void actualizarNumeroIdiomas(AzafataId azafataId, NumeroIdiomas numeroIdiomas){
+        Objects.requireNonNull(azafataId);
+        Objects.requireNonNull(numeroIdiomas);
+        appendChange(new NumeroIdiomasActualizado(azafataId, numeroIdiomas)).apply();
+    }
+
+    public void actualizarEdadAzafata(AzafataId azafataId, EdadAzafata edadAzafata){
+        Objects.requireNonNull(azafataId);
+        Objects.requireNonNull(edadAzafata);
+        appendChange(new EdadAzafataActualizada(azafataId, edadAzafata)).apply();
+    }
+
+    public void actualizarFila(AsientoId asientoId, Fila fila){
+        Objects.requireNonNull(asientoId);
+        Objects.requireNonNull(fila);
+        appendChange(new FilaActualizada(asientoId, fila)).apply();
+    }
+
+    public void actualizarLetra(AsientoId asientoId, Letra letra){
+        Objects.requireNonNull(asientoId);
+        Objects.requireNonNull(letra);
+        appendChange(new LetraActualizada(asientoId, letra)).apply();
+    }
+
+    public void actualizarClasePuesto(AsientoId asientoId, ClasePuesto clasePuesto){
+        Objects.requireNonNull(asientoId);
+        Objects.requireNonNull(clasePuesto);
+        appendChange(new ClasePuestoActualizada(asientoId, clasePuesto)).apply();
+    }
+
     public void asignarPiloto(PilotoId entityId, NombrePiloto nombrePiloto, TipoLicencia tipoLicencia, HorasVuelo horasVuelo){
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(nombrePiloto);

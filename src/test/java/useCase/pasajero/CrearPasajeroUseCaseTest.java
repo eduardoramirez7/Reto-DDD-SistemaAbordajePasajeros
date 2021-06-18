@@ -24,9 +24,9 @@ class CrearPasajeroUseCaseTest {
     @Test
     void executeUseCase() {
 
-//arrange
+        //arrange
         var command = new CrearPasajero(
-                new PasajeroId(1234),
+                PasajeroId.of("122"),
                 new NombrePasajero("Eduardo"),
                 new Email("eduar1079@gmail.com"),
                 new NumeroCelular(12344)
